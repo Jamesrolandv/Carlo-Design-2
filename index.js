@@ -23,6 +23,13 @@
 // });
 // observer.observe(experiment);
 
+// preloader========================================================
+const preload = document.getElementById('preloader');
+
+window.addEventListener('load', () => {
+    preload.style.display = 'none';
+});
+
 // setTimeOut=======================================================
 
 let count = 1;

@@ -14,6 +14,19 @@
     --manrope-font-700: 700;
 }
 
+#preloader{
+    height: 100vh;
+    width: 100vw;
+    z-index: 10000;
+    background: #111 url(Images/preloader.gif) no-repeat center center;
+    position: fixed;
+    transition: 1500ms ease;
+}
+#preloader h2{
+    text-align: center;
+    color: #FF8000;
+    margin-top: 70vh;
+}
 nav{
     display: flex;
     justify-content: space-between;
