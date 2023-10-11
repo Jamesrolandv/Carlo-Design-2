@@ -26,22 +26,50 @@
 // setTimeOut=======================================================
 
 let count = 1;
-setInterval(() => {
-    document.getElementById('bg' + count).checked = true;
-    count++;
-    if(count > 3){
-        count = 1;
-    }
-}, 10000);
+const sliderBg = () => {
+    const slider = setInterval(() => {
+        document.getElementById('bg' + count).checked = true;
+        count++;
+        if(count > 3){
+            count = 1;
+        }
+    }, 10000);
+
+    document.querySelectorAll('.manual-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            clearInterval(slider);
+            sliderBg();
+        })
+    })
+}
+sliderBg();
+
+
 
 // navigation========================================================
 
-const navOpen = document.querySelector('.fa-bars');
-const navClose = document.querySelector('.fa-times');
+document.addEventListener('scroll', () => {
+    const navi = document.querySelector('nav');
+    if(window.scrollY > 0){
+        navi.classList.add('scroll-nav');
+    }else {
+        navi.classList.remove('scroll-nav');
+    }
+});
 
-navOpen.addEventListener('click', () => {
-    document.querySelector('nav ul').style.transform = 'translateX(0)';
-})
-navClose.addEventListener('click', () => {
-    document.querySelector('nav ul').style.transform = 'translateX(250px)';
-})
+// Intersection=======================================================
+
+const pics = document.querySelectorAll('.pic');
+
+let observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        entry.target.classList.toggle('pic-showing', entry.isIntersecting);
+        if(entry.isIntersecting) observer.unobserve(entry.target);
+    })
+}, {
+    threshold: .2,
+    
+});
+pics.forEach(pic => {
+    observer.observe(pic);
+});
