@@ -29,7 +29,7 @@
 			<li><a href="#">Gallery</a></li>
 			<li><a href="#">Contact</a></li>
 		</ul>
-		<button type="button" class="booking book-mobile">Book Now</button>
+		<a href="#book-now"><button type="button" class="booking book-mobile">Book Now</button></a>
 	</nav>
     <header>
 		<input type="radio" name="bg" id="bg1" checked>
@@ -75,7 +75,7 @@
 
 		<section class="menu">
 			<div class="menu-grid">
-				<div class="menu-card">
+				<div class="menu-card featured">
 					<img src="Images/pic3.png" alt="" class="menu-img">
 					<div class="overlay-menu"></div>
 					<div class="menu-content">
@@ -122,7 +122,57 @@
 				</div>
 			</div>
 		</section>
+
+		<section class="service">
+			<div class="service-top">
+				<picture class="service-top-left">
+					<img src="Images/pic8.png" alt="" id="bottom-pic" class="imgs">
+					<img src="Images/pic7.png" alt="" id="top-pic" class="imgs">
+				</picture>
+				<div class="service-top-right left">
+					<h4>QUALITY & BALANCE</h4>
+					<h3>OUR FOOD 
+						PHILOSOPHY</h3>
+					<p>Lörem ipsum hexamism diagen nöpresa prehide kvasidetrel. 
+						Euroger dekade ren. Vajäna sora vunåsoledes, gurade. <br> 
+						Icke-binär sprejgodis, av regen pregon.</p>
+					<button type="button" class="orange-btn">LEARN MORE</button>
+				</div>
+			</div>
+
+			<div class="service-down">
+				<div class="service-address left">
+					<h4>RIGHT HERE WAITING</h4>
+					<h3>VISIT OUR
+						RESTAURANT</h3>
+					<p>Lörem ipsum hexamism diagen nöpresa prehide kvasidetrel. 
+						Euroger dekade ren. Vajäna sora vunåsoledes, gurade. 
+						Icke-binär sprejgodis, av regen pregon.</p><br>
+					<p>M: booking@bikluysd.com <br>
+						T: +639 696 7834496969</p>
+					<button type="button" class="orange-btn">GET DIRECTONS</button>
+				</div>
+				<picture>
+					<img src="Images/pic9.png" alt="" id="pic9">
+				</picture>
+			</div>
+		</section>
 	</main>
+	<footer>
+		<section id="book-now">
+			<p>ONLINE RESERVATION</p>
+			<h3>BOOK A TABLE</h3>
+			<form action="" method="get">
+				<label for="pax">Person/s</label>
+				<input type="number" min="1" max="20" id="pax">
+				<input type="date" name="date" id="date" pattern="yyyy-mm-dd">
+			</form>
+		</section>
+
+		<section>
+
+		</section>
+	</footer>
     <script src="index.js"></script>
 </body>
 </html>

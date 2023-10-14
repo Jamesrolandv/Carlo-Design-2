@@ -25,9 +25,18 @@
 
 // preloader========================================================
 const preload = document.getElementById('preloader');
-
+let countDownIndex = 3;
 window.addEventListener('load', () => {
-    preload.style.display = 'none';
+    let countDown = setInterval(() => {
+        document.querySelector('#preloader h2').textContent = 'Waiting in... ' + countDownIndex;
+        countDownIndex -= 1;
+        if(countDownIndex < 0){
+            clearInterval(countDown);
+            preload.style.display = 'none';
+        };
+    }, 1000);
+    setTimeout(countDown);
+    
 });
 
 // setTimeOut=======================================================
@@ -80,3 +89,18 @@ let observer = new IntersectionObserver(entries => {
 pics.forEach(pic => {
     observer.observe(pic);
 });
+
+
+
+const imgs = document.querySelectorAll('.imgs');
+
+let imgObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        entry.target.classList.toggle('showing', entry.isIntersecting);
+        if(entry.isIntersecting) imgObserver.unobserve(entry.target);
+    });
+});
+
+imgs.forEach(img => {
+    imgObserver.observe(img);
+})

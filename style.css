@@ -104,7 +104,7 @@ nav.scroll-nav{
     border-radius: 3px; 
     border: 2px #979494 solid;
     font-weight: var(--manrope-font-500);
-    font-size: 1.2rem;
+    font-size: clamp(.7rem, 1.2vw, 1.2rem);
     color: aliceblue;
     letter-spacing: 5px;
     cursor: pointer;
@@ -295,6 +295,7 @@ input[type="radio"]{
     --padding: 1rem;
     width: min(var(--max-width), 100% - var(--padding) * 2);
     margin-inline: auto;
+    margin-bottom: 10rem;
 }
 .menu-card{
     border: 1px solid;
@@ -323,7 +324,7 @@ input[type="radio"]{
     color: aliceblue;
     text-decoration: none;
     font-weight: var(--manrope-font-800);
-    font-size: 15px;
+    font-size: clamp(.4rem, .8vw, .8rem);
     position: relative;
     width: fit-content;
     margin-inline: auto;
@@ -332,9 +333,14 @@ input[type="radio"]{
 .menu-content a::after{
     bottom: 0;
 }
+.menu-content h5{
+    font-size: clamp(.45rem, 1vw, 1rem);
+}
+.menu-content h3{
+    font-size: clamp(.5rem, 1.1vw, 1.1rem);
+}
 .blank-content{
     background-color: #111;
-    aspect-ratio: 1 / 2;
     width: 100%;
     height: 100%;
     color: aliceblue;
@@ -348,7 +354,6 @@ input[type="radio"]{
 }
 .menu-img{
     width: 100%;
-    aspect-ratio: 1 / 2;
     object-fit: cover;
     height: 100%;
     transition: 250ms ease-in-out;
@@ -366,6 +371,65 @@ input[type="radio"]{
 .menu-description{
     font-family: 'Manrope';
 }
+.menu-card.featured{
+    grid-row: span 2;
+    grid-column: span 2;
+}
+.service-top{
+    --width: 1085px;
+    --padding: 1rem;
+
+    width: min(var(--width), 100% - var(--padding) * 2);
+    margin-inline: auto;
+    position: relative;
+}
+picture.service-top-left img{
+    position: absolute;
+}
+#top-pic{
+    left: 0;
+    top: -5rem;
+    opacity: 0;
+    transition: 500ms ease-in-out 500ms;
+}
+#top-pic.showing{
+    left: 6rem;
+    opacity: 1;
+}
+.service-top-right{
+    position: absolute;
+    right: 0;
+}
+.service-top-right h4,
+.service-address h4{
+    font-size: clamp(.7rem, 1vw, 1rem);
+}
+.service-top-right h3,
+.service-address h3{
+    font-size: clamp(.8rem, 2vw, 2rem);
+    color: #111;
+}
+.service-down{
+    --width: 1026px;
+    --padding: 1rem;
+
+    width: min(var(--width), 100% - var(--padding) * 2);
+    margin-inline: auto;
+    display: flex;
+    padding-top: 30rem;
+    gap: 4rem;
+    margin-bottom: 80vh;
+}
+.service-address{
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.service-down img{
+    width: 100%;
+}
+
 @media all and (max-width: 960px){
     nav{
         flex-direction: column;
@@ -395,5 +459,16 @@ input[type="radio"]{
     }
     .left img{
         width: 100%;
+    }
+
+    picture.service-top-left img{
+        width: 30%;
+    }
+    #top-pic{
+        left: 3rem;
+        top: -3rem;
+    }
+    .service-top-right{
+        width: 40%;
     }
 }
