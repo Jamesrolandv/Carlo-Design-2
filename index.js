@@ -35,8 +35,6 @@ window.addEventListener('load', () => {
             preload.style.display = 'none';
         };
     }, 1000);
-    setTimeout(countDown);
-    
 });
 
 // setTimeOut=======================================================

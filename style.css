@@ -20,7 +20,6 @@
     z-index: 10000;
     background: #111 url(Images/preloader.gif) no-repeat center center;
     position: fixed;
-    transition: 1500ms ease;
 }
 #preloader h2{
     text-align: center;
@@ -260,7 +259,7 @@ input[type="radio"]{
     position: relative;
     max-width: 400px;
     overflow: hidden;
-    transform: translateX(250px);
+    transform: translateX(10px);
     opacity: 0;
     transition: 500ms ease-in-out;
 }
