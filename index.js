@@ -26,14 +26,6 @@
 // preloader========================================================
 const preload = document.getElementById('preloader');
 const body = document.querySelector('body');
-let countDownIndex = 3;
-let countDown = setInterval(() => {
-    document.querySelector('#preloader h2').textContent = 'Waiting in... ' + countDownIndex;
-    countDownIndex -= 1;
-    if(countDownIndex < 0){
-        countDownIndex = 0;
-    };
-}, 1000);
 window.addEventListener('load', () => {
     body.removeChild(preload);
     document.querySelector('body').style.overflowY = 'scroll';
@@ -105,3 +97,16 @@ let imgObserver = new IntersectionObserver(entries => {
 imgs.forEach(img => {
     imgObserver.observe(img);
 })
+
+// Form Reservation=========================================================
+
+const forms = document.querySelector('form');
+
+forms.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(forms);
+    fetch('reservation.php', {
+        method: 'POST',
+        body: formData
+    });
+});

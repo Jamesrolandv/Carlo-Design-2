@@ -162,19 +162,20 @@
 			<div class="overlay-booking"></div>
 			<p>ONLINE RESERVATION</p>
 			<h3>BOOK A TABLE</h3>
-			<form action="reservation.php" method="post">
+			<form enctype="multipart/form-data">
 				<select name="pax" id="pax">
-					<option name="pax" value="" selected>How Many...</option>
-					<option name="pax" value="pax1">1 - 2 persons</option>
-					<option name="pax" value="pax2">3 - 4 persons</option>
-					<option name="pax" value="pax3">5 - 6 persons</option>
-					<option name="pax" value="pax4">7 - 8 persons</option>
-					<option name="pax" value="pax5">9 - 10 persons</option>
-					<option name="pax" value="pax6">11 - more persons</option>
+					<option value="" selected>How Many...</option>
+					<option value="pax1">1 - 2 persons</option>
+					<option value="pax2">3 - 4 persons</option>
+					<option value="pax3">5 - 6 persons</option>
+					<option value="pax4">7 - 8 persons</option>
+					<option value="pax5">9 - 10 persons</option>
+					<option value="pax6">11 - more persons</option>
 				</select>
 				<input type="date" name="date" id="date" min="2023-01-01" max="2024-01-01">
 				<input type="time" name="time" id="time" >
 				<button type="submit" name="submit" id="booking" class="booking">BOOK NOW</button>
+				<p></p>
 			</form>
 		</section>
 
