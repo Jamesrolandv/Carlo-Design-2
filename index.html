@@ -157,17 +157,30 @@
 				</picture>
 			</div>
 		</section>
-	</main>
-	<footer>
+
 		<section id="book-now">
+			<div class="overlay-booking"></div>
 			<p>ONLINE RESERVATION</p>
 			<h3>BOOK A TABLE</h3>
-			<form action="" method="get">
-				<label for="pax">Person/s</label>
-				<input type="number" min="1" max="20" id="pax">
-				<input type="date" name="date" id="date" pattern="yyyy-mm-dd">
+			<form action="reservation.php" method="post">
+				<select name="pax" id="pax">
+					<option name="pax" value="" selected>How Many...</option>
+					<option name="pax" value="pax1">1 - 2 persons</option>
+					<option name="pax" value="pax2">3 - 4 persons</option>
+					<option name="pax" value="pax3">5 - 6 persons</option>
+					<option name="pax" value="pax4">7 - 8 persons</option>
+					<option name="pax" value="pax5">9 - 10 persons</option>
+					<option name="pax" value="pax6">11 - more persons</option>
+				</select>
+				<input type="date" name="date" id="date" min="2023-01-01" max="2024-01-01">
+				<input type="time" name="time" id="time" >
+				<button type="submit" name="submit" id="booking" class="booking">BOOK NOW</button>
 			</form>
 		</section>
+
+	</main>
+	<footer>
+		
 
 		<section>
 

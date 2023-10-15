@@ -25,22 +25,20 @@
 
 // preloader========================================================
 const preload = document.getElementById('preloader');
-
+const body = document.querySelector('body');
 let countDownIndex = 3;
+let countDown = setInterval(() => {
+    document.querySelector('#preloader h2').textContent = 'Waiting in... ' + countDownIndex;
+    countDownIndex -= 1;
+    if(countDownIndex < 0){
+        countDownIndex = 0;
+    };
+}, 1000);
 window.addEventListener('load', () => {
-    let countDown = setInterval(() => {
-        document.querySelector('#preloader h2').textContent = 'Waiting in... ' + countDownIndex;
-        countDownIndex -= 1;
-        if(countDownIndex < 0){
-            preload.style.display = 'none';
-            document.querySelector('body').style.overflowY = 'scroll';
-            countDownIndex = 0;
-            clearInterval(countDown);
-        };
-    }, 1000);
-
-    if(countDownIndex = 0) {clearInterval(countDown)};
+    body.removeChild(preload);
+    document.querySelector('body').style.overflowY = 'scroll';
 });
+
 
 // setTimeOut=======================================================
 
