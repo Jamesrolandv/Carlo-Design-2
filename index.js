@@ -25,16 +25,21 @@
 
 // preloader========================================================
 const preload = document.getElementById('preloader');
+
 let countDownIndex = 3;
 window.addEventListener('load', () => {
     let countDown = setInterval(() => {
         document.querySelector('#preloader h2').textContent = 'Waiting in... ' + countDownIndex;
         countDownIndex -= 1;
         if(countDownIndex < 0){
-            clearInterval(countDown);
             preload.style.display = 'none';
+            document.querySelector('body').style.overflowY = 'scroll';
+            countDownIndex = 0;
+            clearInterval(countDown);
         };
     }, 1000);
+
+    if(countDownIndex = 0) {clearInterval(countDown)};
 });
 
 // setTimeOut=======================================================
