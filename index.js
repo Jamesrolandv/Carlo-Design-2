@@ -109,19 +109,23 @@ forms.addEventListener('submit', (e) => {
     for(item of formData) {
         console.log(item[0], item[1]);
     }
+
     fetch('http://httpbin.org/post', {
         method: 'POST',
         body: formData,
     }).then(response => response.json())
     .then(response => console.log(response));
+
     const paxs = document.querySelectorAll('.reservation');
     paxs.forEach(pax => {
-        if(pax.value == ''){
+        if(pax.value === ""){
             result.textContent = 'Reservation Incomplete';
             result.style.color = 'red';
+            return;
         }else {
             result.textContent = 'Reservation Complete';
             result.style.color = 'white';
+            return paxs;
         }
     })
 });
