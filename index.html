@@ -162,8 +162,8 @@
 			<div class="overlay-booking"></div>
 			<p>ONLINE RESERVATION</p>
 			<h3>BOOK A TABLE</h3>
-			<form enctype="multipart/form-data">
-				<select name="pax" id="pax">
+			<form>
+				<select name="pax" id="pax" class="reservation">
 					<option value="" selected>How Many...</option>
 					<option value="pax1">1 - 2 persons</option>
 					<option value="pax2">3 - 4 persons</option>
@@ -172,10 +172,10 @@
 					<option value="pax5">9 - 10 persons</option>
 					<option value="pax6">11 - more persons</option>
 				</select>
-				<input type="date" name="date" id="date" min="2023-01-01" max="2024-01-01">
-				<input type="time" name="time" id="time" >
+				<input type="date" name="date" id="date" class="reservation" min="2023-01-01" max="2024-01-01">
+				<input type="time" name="time" id="time" class="reservation" >
 				<button type="submit" name="submit" id="booking" class="booking">BOOK NOW</button>
-				<p></p>
+				<p id="reservation-result"></p>
 			</form>
 		</section>
 

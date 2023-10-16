@@ -26,6 +26,7 @@
 // preloader========================================================
 const preload = document.getElementById('preloader');
 const body = document.querySelector('body');
+
 window.addEventListener('load', () => {
     body.removeChild(preload);
     document.querySelector('body').style.overflowY = 'scroll';
@@ -101,12 +102,26 @@ imgs.forEach(img => {
 // Form Reservation=========================================================
 
 const forms = document.querySelector('form');
-
+const result = document.querySelector('#reservation-result');
 forms.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(forms);
-    fetch('reservation.php', {
+    for(item of formData) {
+        console.log(item[0], item[1]);
+    }
+    fetch('http://httpbin.org/post', {
         method: 'POST',
-        body: formData
-    });
+        body: formData,
+    }).then(response => response.json())
+    .then(response => console.log(response));
+    const paxs = document.querySelectorAll('.reservation');
+    paxs.forEach(pax => {
+        if(pax.value == ''){
+            result.textContent = 'Reservation Incomplete';
+            result.style.color = 'red';
+        }else {
+            result.textContent = 'Reservation Complete';
+            result.style.color = 'white';
+        }
+    })
 });
