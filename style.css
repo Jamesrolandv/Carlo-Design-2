@@ -100,7 +100,7 @@ nav ul li a:focus-within::after{
 
 nav.scroll-nav{
     background: #111;
-    padding-block: 1rem;
+    padding-block: .5rem;
 }
 
 .booking{
@@ -114,8 +114,12 @@ nav.scroll-nav{
     letter-spacing: 5px;
     cursor: pointer;
     text-transform: uppercase;
-    transition: 250ms ease-in-out;
-    width: auto;
+    transition: 200ms ease-in-out;
+
+}
+.book-mobile.btnHide{
+    scale: 0;
+    display: none;
 }
 .booking:hover{
     background: #979494; 
@@ -447,7 +451,6 @@ picture.service-top-left img{
     width: min(var(--width), 100% - var(--padding) * 2);
     margin-inline: auto;
     display: flex;
-    padding-top: 30rem;
     gap: 4rem;
     padding-bottom: 5rem;
     transition: 200ms ease-in-out;
@@ -572,6 +575,9 @@ table tbody tr td{
 @media all and (max-width: 960px){
     nav{
         flex-direction: column;
+    }
+    nav .logo{
+        padding-top: 1rem;
     }
     nav ul{
         height: 100vh;

@@ -37,10 +37,13 @@ sliderBg();
 
 document.addEventListener('scroll', () => {
     const navi = document.querySelector('nav');
+    const bookBtn = document.querySelector('.book-mobile');
     if(window.scrollY > 0){
         navi.classList.add('scroll-nav');
+        bookBtn.classList.add('btnHide');
     }else {
         navi.classList.remove('scroll-nav');
+        bookBtn.classList.remove('btnHide');
     }
 });
 
