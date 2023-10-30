@@ -17,7 +17,7 @@ const sliderBg = () => {
     const slider = setInterval(() => {
         document.getElementById('bg' + count).checked = true;
         count++;
-        if(count > 3){
+        if(count > 5){
             count = 1;
         }
     }, 10000);

@@ -151,7 +151,7 @@ header{
 }
 .header-bg .bg{
     width: 0;
-    height: 120vh;
+    height: 130vh;
     object-fit: cover;
     transition: 800ms ease-in-out;
     opacity: .6;
@@ -205,12 +205,16 @@ input[type="radio"]{
 }
 #bg1:checked ~ .manual-nav label[for="bg1"],
 #bg2:checked ~ .manual-nav label[for="bg2"],
-#bg3:checked ~ .manual-nav label[for="bg3"]{
+#bg3:checked ~ .manual-nav label[for="bg3"],
+#bg4:checked ~ .manual-nav label[for="bg4"],
+#bg5:checked ~ .manual-nav label[for="bg5"]{
     border: 1px solid rgba(240, 248, 255, 0.452);
 }
 #bg1:checked ~ .header-bg .bg1,
 #bg2:checked ~ .header-bg .bg2,
-#bg3:checked ~ .header-bg .bg3{
+#bg3:checked ~ .header-bg .bg3,
+#bg4:checked ~ .header-bg .bg4,
+#bg5:checked ~ .header-bg .bg5{
     width: 100%;
 }
 
@@ -392,15 +396,33 @@ input[type="radio"]{
     width: min(var(--width), 100% - var(--padding) * 2);
     margin-inline: auto;
     position: relative;
+    border: 1px solid;
+    height: 500px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
+
 picture.service-top-left img{
     position: absolute;
 }
+
 #top-pic{
     left: 0;
     top: -5rem;
     opacity: 0;
-    transition: 500ms ease-in-out 500ms;
+    transition: 500ms ease-in-out;
+}
+#bottom-pic{
+    transition: 500ms ease-in-out;
+}
+.service-top:hover #top-pic{
+    transform: translate(5rem, 5rem);
+    rotate: y 180deg;
+}
+.service-top:hover #bottom-pic{
+    transform: translate(-7rem, -5rem);
+    z-index: 1;
+    rotate: y 180deg;
 }
 #top-pic.showing{
     left: 6rem;
@@ -588,6 +610,9 @@ table tbody tr td{
     #top-pic{
         left: 3rem;
         top: -3rem;
+    }
+    .service-top{
+        height: 200px;
     }
     .service-top-right{
         width: 40%;
