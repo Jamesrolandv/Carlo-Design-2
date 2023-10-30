@@ -396,7 +396,6 @@ input[type="radio"]{
     width: min(var(--width), 100% - var(--padding) * 2);
     margin-inline: auto;
     position: relative;
-    border: 1px solid;
     height: 500px;
     perspective: 1000px;
     transform-style: preserve-3d;
